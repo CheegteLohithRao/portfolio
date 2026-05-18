@@ -17,15 +17,17 @@ const skills = [
   "Arduino",
   "KiCad",
   "Altium",
+  "PCB Layout",
+  "Low-Power Design",
   "Signal Integrity",
   "IoT Protocols",
   "Python",
   "MATLAB",
   "Verilog",
-  "Power Electronics"
+  "TinyML"
 ];
 
-const profileTags = ["Embedded Systems", "TinyML", "PCB Design", "Edge AI"];
+const profileTags = ["Embedded Systems", "PCB Design", "TinyML", "Edge AI", "Low-Power Hardware"];
 
 const profileFacts = [
   ["College", "Parul University"],
@@ -37,28 +39,28 @@ const projectPlaceholders = [
   {
     name: "Embedded Systems Projects",
     type: "Firmware + Hardware",
-    text: "Reserved for verified microcontroller, sensor, communication, and control-system builds.",
-    tags: ["MCU", "RTOS", "IoT"]
+    text: "Prepared for documented microcontroller, sensor, communication, and control-system builds with test evidence.",
+    tags: ["MCU", "Sensors", "Protocols"]
   },
   {
     name: "TinyML Work",
     type: "Edge Intelligence",
-    text: "Reserved for on-device inference experiments, model optimization notes, and benchmarked demos.",
-    tags: ["TinyML", "Signals", "Edge AI"]
+    text: "Prepared for on-device inference experiments, signal pipelines, model-size notes, and measured latency results.",
+    tags: ["TinyML", "Signals", "Benchmarks"]
   },
   {
     name: "Electronics Tools",
     type: "Lab Utilities",
-    text: "Reserved for dashboards, measurement helpers, serial monitors, and engineering workflow tools.",
-    tags: ["Telemetry", "Debug", "UI"]
+    text: "Prepared for serial monitors, measurement helpers, telemetry dashboards, and repeatable bring-up utilities.",
+    tags: ["Telemetry", "Debug", "Bench"]
   }
 ];
 
 const pcbPlaceholders = [
-  "PCB design slot prepared for schematic, layout screenshots, stackup notes, and fabrication status.",
+  "Schematic and layout slot prepared for stackup notes, design rules, and fabrication status.",
   "Board bring-up slot prepared for test points, validation checklist, and oscilloscope captures.",
-  "Manufacturing slot prepared for Gerbers, BOM status, enclosure fit, and revision history.",
-  "Signal/power integrity slot prepared for routing constraints, copper strategy, and review notes."
+  "Manufacturing slot prepared for Gerbers, BOM review, assembly notes, and revision history.",
+  "Signal and power integrity slot prepared for routing constraints, copper strategy, and review notes."
 ];
 
 const paperPlaceholders = [
@@ -79,19 +81,19 @@ const experiencePlaceholders = [
     role: "Experience Timeline",
     org: "Professional entry pending",
     time: "Coming Soon",
-    detail: "Reserved for verified internships, roles, lab work, freelance work, or team contributions."
+    detail: "Prepared for verified internships, lab work, freelance PCB tasks, embedded roles, or team contributions."
   },
   {
     role: "Project Leadership",
     org: "Verified contribution pending",
     time: "Coming Soon",
-    detail: "Reserved for documented ownership, collaboration, mentoring, or competition experience."
+    detail: "Prepared for documented ownership, collaboration, competition work, or technical mentoring."
   },
   {
     role: "Research / Lab Work",
     org: "Verified record pending",
     time: "Coming Soon",
-    detail: "Reserved for supervised research, experiments, review papers, or academic technical work."
+    detail: "Prepared for supervised research, experiments, review papers, or academic technical work."
   }
 ];
 
@@ -136,8 +138,8 @@ function ThreeElectronField() {
     const particleCount = window.innerWidth < 700 ? 64 : 118;
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
-    const colorA = new THREE.Color("#2ef2ff");
-    const colorB = new THREE.Color("#b8ff2c");
+    const colorA = new THREE.Color("#7ddfeb");
+    const colorB = new THREE.Color("#d8f08a");
 
     for (let i = 0; i < particleCount; i += 1) {
       positions[i * 3] = (Math.random() - 0.5) * 38;
@@ -157,7 +159,7 @@ function ThreeElectronField() {
       size: 0.08,
       vertexColors: true,
       transparent: true,
-      opacity: 0.58,
+      opacity: 0.42,
       blending: THREE.NormalBlending,
       depthWrite: false
     });
@@ -287,20 +289,20 @@ function HeroVisual() {
   return (
     <Reveal className="floating-dashboard glass dashboard-shell relative min-h-[455px] overflow-hidden rounded-lg p-5 md:p-6" delay={0.2}>
       <div className="boot-overlay">
-        <p>BOOTING STM32 LAB OS</p>
+        <p>INITIALIZING EDGE LAB</p>
         <p>CHECKING GPIO MAP ... OK</p>
-        <p>LOCKING PLL @ 168MHz ... OK</p>
-        <p>ARMING SIGNAL MONITOR ... READY</p>
+        <p>SYNCING PCB TELEMETRY ... OK</p>
+        <p>SIGNAL MONITOR ... READY</p>
       </div>
       <div className="mb-4 flex items-center justify-between border-b border-cyan-200/10 pb-4">
         <div>
-          <p className="font-display text-sm text-neon neon-type">OSC-2048</p>
-          <p className="text-xs text-slate-400">embedded signal analyzer</p>
+          <p className="font-display text-sm text-neon neon-type">EDGE-LAB MONITOR</p>
+          <p className="text-xs text-slate-400">embedded signal diagnostics</p>
         </div>
         <div className="flex gap-2">
-          <span className="h-3 w-3 rounded-full bg-acid shadow-[0_0_8px_rgba(184,255,44,0.55)]" />
-          <span className="h-3 w-3 rounded-full bg-copper shadow-[0_0_8px_rgba(245,158,11,0.55)]" />
-          <span className="h-3 w-3 rounded-full bg-magenta shadow-[0_0_8px_rgba(255,61,242,0.55)]" />
+          <span className="h-3 w-3 rounded-full bg-acid shadow-[0_0_6px_rgba(216,240,138,0.32)]" />
+          <span className="h-3 w-3 rounded-full bg-copper shadow-[0_0_6px_rgba(216,154,54,0.3)]" />
+          <span className="h-3 w-3 rounded-full bg-magenta shadow-[0_0_6px_rgba(215,131,201,0.26)]" />
         </div>
       </div>
       <div className="signal-lane mb-4">
@@ -313,24 +315,24 @@ function HeroVisual() {
           className="waveform"
           d="M0 105 H45 L58 52 L75 158 L90 105 H132 L148 82 L162 126 L178 105 H225 L242 38 L258 170 L274 105 H334 L350 68 L366 142 L382 105 H440 L455 92 L470 118 L486 105 H520"
           fill="none"
-          stroke="#2ef2ff"
-          strokeWidth="4"
+          stroke="#7ddfeb"
+          strokeWidth="3"
         />
         <path
           className="ripple-wave"
           d="M0 164 C64 130 104 184 170 142 S282 114 340 138 S432 176 520 126"
           fill="none"
-          stroke="#ff3df2"
+          stroke="#d89a36"
           strokeWidth="2"
-          opacity="0.65"
+          opacity="0.5"
         />
         <path
           className="ripple-wave ripple-alt"
           d="M0 74 C60 94 112 46 170 72 S274 116 334 76 S434 36 520 86"
           fill="none"
-          stroke="#b8ff2c"
+          stroke="#d8f08a"
           strokeWidth="1.5"
-          opacity="0.55"
+          opacity="0.44"
         />
       </svg>
       <div className="grid grid-cols-4 gap-3">
@@ -367,13 +369,13 @@ function Hero() {
       <CircuitBackdrop />
       <div className="section-shell grid items-center gap-10 lg:grid-cols-[1.04fr_0.96fr]">
         <Reveal className="relative z-10">
-          <p className="section-kicker hero-kicker mb-5">Electronics engineering portfolio</p>
+          <p className="section-kicker hero-kicker mb-5">Embedded systems engineering portfolio</p>
           <h1 className="hero-title font-display text-[clamp(2.45rem,5.7vw,5.35rem)] font-extrabold leading-[1.02] text-white">
             Embedded Systems &amp; PCB Design
           </h1>
           <p className="hero-subheading mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             I&apos;m Cheegte Lohith Rao, an Electronics &amp; Communication Engineering student focused on
-            embedded systems, TinyML, PCB workflows, and practical edge hardware.
+            firmware, PCB design, TinyML, and intelligent edge hardware for practical low-power systems.
           </p>
           <div className="mt-8 flex flex-wrap gap-4">
             <a href="#projects" className="power-switch">
@@ -400,9 +402,9 @@ function ProfileIdentity() {
           <div className="profile-frame">
             <div className="profile-rings" />
             <div className="profile-chip-outline" />
-            <div className="profile-image-placeholder">
+            <div className="profile-image-placeholder" aria-label="Cheegte Lohith Rao profile mark">
               <span>CLR</span>
-              <small>Profile Image</small>
+              <small>ECE / Embedded</small>
             </div>
             <span className="profile-pulse-dot top-[18%] left-[12%]" />
             <span className="profile-pulse-dot bottom-[20%] right-[13%]" style={{ animationDelay: "0.8s" }} />
@@ -419,15 +421,15 @@ function ProfileIdentity() {
         <Reveal className="profile-data-panel" delay={0.12}>
           <div className="module-status mb-5">
             <span className="switch-led" />
-            SYSTEM ACTIVE
+            ENGINEERING PROFILE
           </div>
           <p className="section-kicker mb-3">profile / identity</p>
           <h2 className="terminal-text neon-heading font-display text-[clamp(2.1rem,5vw,4.8rem)] font-extrabold leading-none text-white">
             Cheegte Lohith Rao
           </h2>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Electronics and Communication Engineering student building toward embedded systems,
-            intelligent edge devices, PCB workflows, and practical AI hardware experimentation.
+            Electronics and Communication Engineering student at Parul University, Vadodara, building toward
+            embedded AI systems, PCB and firmware engineering, TinyML hardware, and low-power fault detection.
           </p>
 
           <div className="profile-divider my-7" />
@@ -452,11 +454,11 @@ function ProfileIdentity() {
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
             <div className="status-strip">
               <span />
-              ENGINEERING MODE ENABLED
+              LOW-POWER FOCUS
             </div>
             <div className="status-strip status-strip-alt">
               <span />
-              EDGE LAB READY
+              EDGE AI DIRECTION
             </div>
           </div>
 
@@ -491,14 +493,14 @@ function About() {
     <section id="about" className="section-shell">
       <SectionIntro
         kicker="about"
-        title="Hardware intuition with dashboard-grade clarity"
-        text="My work sits between electronics engineering, firmware, and data-rich interfaces. I enjoy turning raw signals into decisions: from board bring-up and probing to telemetry, control loops, and production-ready documentation."
+        title="Hardware intuition with measured engineering discipline"
+        text="My work sits between electronics engineering, firmware, and data-rich interfaces. I enjoy turning raw signals into decisions: from board bring-up and probing to telemetry, control loops, and clear technical documentation."
       />
       <div className="grid gap-4 md:grid-cols-3">
         {[
           ["Circuit-first thinking", "Schematic hygiene, test points, grounding strategy, and readable board architecture."],
           ["Firmware discipline", "Timing-aware embedded code, serial protocols, edge filtering, and hardware abstraction."],
-          ["Bench to interface", "Oscilloscope traces, UART logs, and sensor streams transformed into useful dashboards."]
+          ["Bench to interface", "Oscilloscope traces, UART logs, and sensor streams converted into useful diagnostics."]
         ].map(([title, text]) => (
           <Reveal key={title} as="article" className="pcb-module glass p-6" delay={0.05}>
             <h3 className="font-display text-xl text-white">{title}</h3>
@@ -513,7 +515,7 @@ function About() {
 function Skills() {
   return (
     <section id="skills" className="section-shell">
-      <SectionIntro kicker="skills" title="Toolchain for embedded systems that ship" />
+      <SectionIntro kicker="skills" title="Embedded, PCB, and edge AI toolchain" />
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {skills.map((skill, index) => (
           <Reveal key={skill} className="flow-pill rounded border border-cyan-300/15 bg-white/[0.035] px-4 py-4" delay={(index % 4) * 0.04}>
@@ -531,8 +533,8 @@ function Projects() {
     <section id="projects" className="section-shell">
       <SectionIntro
         kicker="projects"
-        title="Project bays prepared for verified engineering work"
-        text="Clean placeholders for future embedded systems, TinyML, and electronics tools. No project is listed until it has real documentation, code, or validation evidence."
+        title="Project bays for verified engineering work"
+        text="Structured slots for embedded systems, TinyML, and electronics tools. Work is intended to be added with real documentation, code, measurements, and validation evidence."
       />
       <div className="grid gap-5 lg:grid-cols-3">
         {projectPlaceholders.map((project) => (
@@ -563,8 +565,8 @@ function PCBDesigns() {
     <section id="pcb-designs" className="section-shell">
       <SectionIntro
         kicker="pcb showcase"
-        title="Professional PCB design dashboard"
-        text="A structured showcase area for future PCB designs, board revisions, fabrication notes, and bring-up evidence."
+        title="PCB design and board bring-up dashboard"
+        text="A structured showcase area for PCB layouts, board revisions, fabrication notes, BOM review, and bring-up evidence."
       />
       <div className="pcb-dashboard glass relative overflow-hidden rounded-lg p-6 md:p-8">
         <div className="absolute inset-0 opacity-20">
@@ -600,14 +602,14 @@ function Research() {
     <section id="research" className="section-shell">
       <SectionIntro
         kicker="research papers"
-        title="IEEE-style research terminal"
-        text="Reserved for future research and review papers with abstracts, keywords, references, and publication status."
+        title="Research and technical writing index"
+        text="Reserved for research notes and review papers with abstracts, keywords, references, methods, and publication status."
       />
       <div className="research-terminal space-y-4">
         {paperPlaceholders.map((paper, index) => (
           <article key={paper} className="research-row glass flex flex-col justify-between gap-4 rounded-lg p-5 md:flex-row md:items-center">
             <div>
-              <p className="text-sm font-bold text-magenta">IEEE/REVIEW SLOT 0{index + 1}</p>
+              <p className="text-sm font-bold text-magenta">RESEARCH SLOT 0{index + 1}</p>
               <h3 className="mt-2 text-xl font-bold text-white">Coming Soon</h3>
               <p className="mt-2 text-sm leading-6 text-slate-400">{paper}</p>
             </div>
@@ -649,13 +651,13 @@ function Experience() {
     <section id="experience" className="section-shell">
       <SectionIntro
         kicker="experience"
-        title="Experience timeline prepared for verified work"
-        text="Professional timeline placeholders for future roles, internships, lab work, research activity, or documented project leadership."
+        title="Experience timeline for verified work"
+        text="Professional timeline placeholders for internships, lab work, research activity, freelance PCB tasks, or documented project leadership."
       />
       <div className="relative space-y-5 before:absolute before:left-3 before:top-2 before:h-full before:w-px before:bg-neon/25">
         {experiencePlaceholders.map((item) => (
           <article key={item.role} className="experience-slot relative ml-9 rounded-lg border border-cyan-300/15 bg-white/[0.035] p-5">
-            <span className="absolute -left-[34px] top-6 h-3 w-3 rounded-full bg-neon shadow-[0_0_18px_rgba(46,242,255,0.9)]" />
+            <span className="absolute -left-[34px] top-6 h-3 w-3 rounded-full bg-neon shadow-[0_0_10px_rgba(126,223,235,0.45)]" />
             <div className="flex flex-col justify-between gap-2 md:flex-row">
               <div>
                 <h3 className="font-display text-xl text-white">{item.role}</h3>
@@ -677,19 +679,18 @@ function Contact() {
       <div className="glass grid gap-8 rounded-lg p-6 md:grid-cols-[0.9fr_1.1fr] md:p-8">
         <div>
           <p className="section-kicker mb-3">contact</p>
-          <h2 className="section-title text-white">Let&apos;s build the next board</h2>
+          <h2 className="section-title text-white">Let&apos;s build reliable edge hardware</h2>
           <p className="mt-4 leading-7 text-slate-300">
-            Open to electronics projects, PCB collaborations, embedded dashboards, and research-driven
-            prototypes.
+            Open to PCB collaborations, embedded systems projects, TinyML experiments, and research-driven hardware prototypes.
           </p>
         </div>
         <form className="grid gap-4">
           <input className="rounded border border-cyan-300/15 bg-void/70 px-4 py-3 text-white outline-none ring-neon/40 focus:ring-2" placeholder="Name" />
           <input className="rounded border border-cyan-300/15 bg-void/70 px-4 py-3 text-white outline-none ring-neon/40 focus:ring-2" placeholder="Email" />
-          <textarea className="min-h-32 rounded border border-cyan-300/15 bg-void/70 px-4 py-3 text-white outline-none ring-neon/40 focus:ring-2" placeholder="Project signal..." />
+          <textarea className="min-h-32 rounded border border-cyan-300/15 bg-void/70 px-4 py-3 text-white outline-none ring-neon/40 focus:ring-2" placeholder="Project details..." />
           <button type="button" className="power-switch">
             <span className="switch-led" />
-            Transmit Message
+            Send Message
           </button>
         </form>
       </div>
@@ -714,7 +715,7 @@ function App() {
         <Contact />
       </main>
       <footer className="border-t border-cyan-300/10 py-8 text-center text-sm text-slate-500">
-        Designed as a live circuit: responsive, animated, and ready for your real portfolio content.
+        Cheegte Lohith Rao - Embedded Systems, PCB Design, TinyML, and Intelligent Edge Hardware.
       </footer>
     </>
   );
